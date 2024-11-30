@@ -13,7 +13,6 @@ so that it is easily filtered and analyzed.
 import numpy as np
 import pandas as pd
 import streamlit as st
-from streamlit_option_menu import option_menu
 import time
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 from pathlib import Path
