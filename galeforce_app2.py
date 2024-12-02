@@ -17,8 +17,6 @@ import time
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 from pathlib import Path
 
-
-
 # Page config
 st.set_page_config(layout = "wide", 
                    initial_sidebar_state="auto", 
@@ -56,8 +54,6 @@ class Flow_Control():
 
         # Merge dataframes
         merge = data.df_merger(splitter[1])
-        # st.write('merge: ', merge)
-        # st.stop()
         
         # Aggregate to yield the final result
         agg = data.agg_dataframe(splitter[0], merge)
@@ -65,10 +61,7 @@ class Flow_Control():
         # Show df as aggrid table
         table = data.create_table(agg)
             
-        
-        
-        
-        
+               
 class Setup():
     """Class that defines the font and button styles and lays out headers."""
     
@@ -251,7 +244,6 @@ class Upload():
                 
             return data_df
    
-    
     def move_other(self, data_df):
         
         # Where church name was entered in the other column, move it to the church column
@@ -269,9 +261,7 @@ class Upload():
         return data_df
     
     def split(self, data_df):
-        
-        # st.write(data_df)
-        
+ 
         # Create a dataframe with cols = Church through admin phone
         admin_info = data_df[['Church',  
                               'Registrants', 
@@ -306,9 +296,7 @@ class Upload():
                                                   'Type ' + str(number): 'Application',
                                                   'Kids ' + str(number): 'Kids',
                                                   'Workshop ' + str(number): 'Workshop'})
-            # st.write(subset_df)
-            
-            
+    
             # Add df to dictionary
             key_word = 'registrant_' + str(number)
             subset_df_dict[key_word] = subset_df
@@ -321,7 +309,6 @@ class Upload():
 
         return subset_df_concat
     
-        
     def agg_dataframe(self, admin_df, data_df):
 
         # st.write('admin: ', admin_df)
@@ -345,8 +332,6 @@ class Upload():
                                       'Kids',
                                       'Workshop'
                                       ]]
-        
-        # st.write('final', self.final_df)
 
         return self.final_df
     
@@ -418,8 +403,6 @@ class Upload():
             mime='text/csv'
         )
        
-
-
 
 # Run 
 if __name__ == '__main__':
