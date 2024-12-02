@@ -21,7 +21,6 @@ from pathlib import Path
 
 # Page config
 st.set_page_config(layout = "wide", 
-                   page_title = 'Gale Force Analytics', 
                    initial_sidebar_state="auto", 
                    menu_items = None)
 
@@ -80,8 +79,8 @@ class Setup():
         
         # Build the full path to the file
         # Logo file must be in same folder as py file
-        self.logo_file = str(current_dir) + '/logo.jpg'
-        # self.logo_file = 'logo.jpg'
+        # self.logo_file = str(current_dir) + '/logo.jpg'
+        self.logo_file = 'logo.jpg'
     
     
     def header(self):
